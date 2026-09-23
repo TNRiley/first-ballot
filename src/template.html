@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>:root{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>First Ballot</title>
+<meta name="description" content="Every lead and supporting acting Emmy nomination since 1979. 72.5% of everyone nominated never won it, and of the ones who did, 68% won on their very first try.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --page:#F2EEE3; --grid:#E7E0CE;
+  --card:#FFFDF7; --sunk:#EAE3D2; --line:#E0D8C2;
+  --ink:#1C1712; --ink2:#4E4534; --ink3:#8A7F68; --rule:#D8CFB6;
+  --gold:#A5761E; --goldbright:#C99A2E; --goldwash:rgba(165,118,30,.14); --goldwash2:rgba(165,118,30,.26);
+  --red:#8C3A2E; --loss:#C8BEA3; --lossring:#B3A788;
+  --tipbg:#1C1712; --tipink:#F2EEE3;
+  --shadow:rgba(28,23,18,.14);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --page:#151210; --grid:#1E1A15;
+  --card:#1F1A15; --sunk:#191510; --line:#2C2519;
+  --ink:#F1EBDD; --ink2:#CBBFA4; --ink3:#93876E; --rule:#332B1E;
+  --gold:#E3B24B; --goldbright:#F0C868; --goldwash:rgba(227,178,75,.14); --goldwash2:rgba(227,178,75,.24);
+  --red:#E08B72; --loss:#4A4132; --lossring:#5E5440;
+  --tipbg:#F1EBDD; --tipink:#151210;
+  --shadow:rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --page:#151210; --grid:#1E1A15;
+  --card:#1F1A15; --sunk:#191510; --line:#2C2519;
+  --ink:#F1EBDD; --ink2:#CBBFA4; --ink3:#93876E; --rule:#332B1E;
+  --gold:#E3B24B; --goldbright:#F0C868; --goldwash:rgba(227,178,75,.14); --goldwash2:rgba(227,178,75,.24);
+  --red:#E08B72; --loss:#4A4132; --lossring:#5E5440;
+  --tipbg:#F1EBDD; --tipink:#151210;
+  --shadow:rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{background:var(--page)}
+body{margin:0;color:var(--ink);font:400 16.5px/1.6 Inter,"Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  background-color:var(--page);
+  background-image:radial-gradient(var(--grid) 1.1px,transparent 1.1px);
+  background-size:22px 22px;background-position:-1px -1px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;margin:0;line-height:1.05;text-wrap:balance}
+p{margin:0}
+a{color:var(--gold);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.num,.mono{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",ui-monospace,monospace}
+b,strong{font-weight:700}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,40px) 80px}
+
+/* ---- header ---- */
+.hero{padding:60px 0 30px}
+.eyebrow{font:600 12px/1.3 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;gap:10px;align-items:center;margin-bottom:16px}
+.eyebrow::before{content:"\2605";font-size:13px}
+h1{font-size:clamp(48px,9vw,104px);letter-spacing:-.01em;margin:0 0 16px;font-variation-settings:"opsz" 144}
+.dek{font-size:clamp(17px,2vw,20px);line-height:1.55;max-width:42em;color:var(--ink2)}
+.dek b{color:var(--ink);font-weight:600}
+.byline{margin-top:22px;font-size:13px;color:var(--ink3)}
+
+/* ---- lede / verify block ---- */
+.lede{padding:8px 0 44px;display:grid;gap:26px;grid-template-columns:minmax(0,1.15fr) minmax(240px,.85fr);align-items:start}
+@media(max-width:820px){.lede{grid-template-columns:1fr}}
+.lede p{margin-bottom:16px;max-width:60em;font-size:16px;line-height:1.65;color:var(--ink2)}
+.lede p:last-child{margin-bottom:0}
+.lede p b{color:var(--ink)}
+
+.doubles{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 10px 26px -18px var(--shadow)}
+.doubles h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-bottom:14px;font-family:Inter,sans-serif;font-weight:600}
+.dbl{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;padding:10px 0;border-top:1px solid var(--rule)}
+.dbl:first-of-type{border-top:none}
+.dbl .yr{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--gold);font-size:15px}
+.dbl .nm{font-weight:700;grid-column:2}
+.dbl .fm{grid-column:2;color:var(--ink3);font-size:13.5px;line-height:1.5}
+.dbl .fm em{font-style:normal;color:var(--ink2)}
+.dbl.hero-double{background:var(--goldwash);margin:0 -22px;padding:12px 22px;border-radius:8px;border-top:none}
+
+/* ---- stat tiles ---- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:52px}
+@media(max-width:760px){.tiles{grid-template-columns:1fr}}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 10px 26px -20px var(--shadow)}
+.tile .v{font-family:Fraunces,serif;font-weight:700;font-size:clamp(36px,4.6vw,48px);color:var(--gold);line-height:1;font-variation-settings:"opsz" 60}
+.tile .l{margin-top:10px;font-size:14px;color:var(--ink2);line-height:1.45}
+.tile .l b{color:var(--ink)}
+
+/* ---- section heads ---- */
+.section{padding:10px 0 56px}
+.section h2{font-size:clamp(26px,3.4vw,34px);margin-bottom:10px;font-variation-settings:"opsz" 60}
+.section .sub{color:var(--ink2);max-width:56em;font-size:15.5px;line-height:1.6;margin-bottom:28px}
+
+/* ---- distribution chart ---- */
+.distwrap{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px 18px;box-shadow:0 10px 26px -20px var(--shadow)}
+.distbars{display:flex;align-items:flex-end;gap:10px;height:180px;margin-bottom:6px}
+.distbar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:8px}
+.distbar .bar{width:100%;max-width:52px;background:linear-gradient(var(--goldbright),var(--gold));border-radius:5px 5px 3px 3px;position:relative;min-height:3px}
+.distbar .n{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink3)}
+.distbar .lbl{font-size:11.5px;color:var(--ink3);font-weight:600}
+.distbar.first .bar{background:linear-gradient(var(--red),var(--gold))}
+
+/* ---- drought leaderboard ---- */
+.drought{display:grid;gap:10px}
+.drow{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;padding:11px 16px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.drow.champ{background:var(--goldwash);border-color:var(--goldbright)}
+.drow .rk{font-family:"IBM Plex Mono",monospace;color:var(--ink3);font-size:13px}
+.drow .who{display:flex;flex-direction:column;gap:2px}
+.drow .who .n{font-weight:700}
+.drow .who .f{font-size:12.5px;color:var(--ink3)}
+.drow .ct{font-family:"IBM Plex Mono",monospace;font-weight:700;color:var(--gold);font-size:15px;white-space:nowrap}
+.champ-note{margin-top:16px;font-size:14.5px;color:var(--ink2);line-height:1.6;max-width:56em}
+.champ-note b{color:var(--ink)}
+
+/* ---- browser controls ---- */
+.controls{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;margin-bottom:20px}
+.grp{display:flex;flex-direction:column;gap:7px}
+.grp .gl{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.seg{display:inline-flex;background:var(--sunk);border:1px solid var(--line);border-radius:9px;padding:3px;gap:2px}
+.seg button{border:0;background:transparent;color:var(--ink2);font:600 13.5px Inter,sans-serif;padding:7px 13px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.seg button.on{background:var(--gold);color:var(--card)}
+.seg button:hover:not(.on){color:var(--ink)}
+.searchgrp{flex:1;min-width:200px}
+.searchgrp input{width:100%;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:9px 13px;font:400 14px Inter,sans-serif;color:var(--ink)}
+.searchgrp input::placeholder{color:var(--ink3)}
+.chk{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink2);cursor:pointer;user-select:none}
+.chk input{accent-color:var(--gold)}
+.famcount{font-size:13px;color:var(--ink3);margin-bottom:14px}
+.famcount b{color:var(--ink)}
+
+/* ---- axis + rows ---- */
+.axis{display:grid;grid-template-columns:220px 1fr;gap:16px;padding:0 0 6px;position:sticky;top:0;background:var(--page);z-index:2}
+.axis .sp{}
+.axis svg{display:block;width:100%;height:20px}
+.axis text{font-family:"IBM Plex Mono",monospace;font-size:10.5px;fill:var(--ink3)}
+
+.panel{max-height:620px;overflow-y:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:6px 18px;box-shadow:0 10px 26px -20px var(--shadow)}
+.prow{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:center;padding:9px 0;border-top:1px solid var(--rule)}
+.prow:first-child{border-top:none}
+.prow .who{min-width:0}
+.prow .who .n{font-weight:700;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prow .who .m{font-size:12px;color:var(--ink3);margin-top:1px}
+.prow .who .m b{color:var(--gold)}
+.prow svg{display:block;width:100%;height:26px;cursor:pointer}
+.prow .dot-loss{fill:var(--loss);stroke:var(--lossring);stroke-width:1}
+.prow .dot-win{fill:var(--gold);stroke:var(--goldbright);stroke-width:1.4}
+.prow.dim{opacity:.28}
+.prow .detail{grid-column:1/-1;font-size:13px;color:var(--ink2);line-height:1.8;padding:6px 0 10px;display:none}
+.prow.open .detail{display:block}
+.prow .detail b{color:var(--gold);font-weight:700}
+.empty{padding:26px 4px;color:var(--ink3);font-size:14px}
+
+/* ---- methodology / sources ---- */
+.methbox{background:var(--sunk);border:1px solid var(--line);border-radius:14px;padding:22px 26px;font-size:14.5px;line-height:1.7;color:var(--ink2)}
+.methbox h3{font-size:15px;margin-bottom:10px;color:var(--ink);font-family:Inter,sans-serif;font-weight:700}
+.methbox p{margin-bottom:12px}
+.methbox p:last-child{margin-bottom:0}
+.methbox code{font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--card);padding:1px 5px;border-radius:4px;border:1px solid var(--line)}
+
+footer{padding:40px 0 10px;border-top:1px solid var(--rule);margin-top:20px}
+footer .src{font-size:13px;color:var(--ink3);line-height:1.8}
+footer .src a{color:var(--ink2)}
+footer .catlink{margin-top:18px;font-size:13px}
+
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--rule);border-radius:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Television Academy nominations &middot; 1979&ndash;2026</div>
+    <h1>First Ballot</h1>
+    <p class="dek">Every lead and supporting acting Emmy nomination since 1979 &mdash; <b>1,573 acting careers</b> across twelve categories. <b>72.5% of them never won</b> the category they were nominated for, not once. Of the ones who did, <b>68% won on their very first try</b>. The Emmys don&rsquo;t reward waiting your turn &mdash; they mostly pick you fast, or never.</p>
+    <p class="byline">Built 2026-09-22 &middot; data through the 78th Primetime Emmy Awards, September 14, 2026</p>
+  </header>
+
+  <section class="lede">
+    <div>
+      <p>At the 78th Emmys on September 14, 2026, <b>Matthew Rhys</b> won Lead Actor in a Comedy Series for <i>Widow&rsquo;s Bay</i>, and the same night, Lead Actor in a Limited or Anthology Series or Movie for <i>The Beast in Me</i>. Coverage called it a first: nobody had won two lead-actor Emmys in the same year.</p>
+      <p>Checked against every acting nomination from 1979 on, that holds &mdash; but only with the word <b>lead</b> doing real work. Two other people have won two of these twelve acting categories in one night: <b>James Earl Jones</b> in 1991 (a lead prize and a supporting one) and <b>Stockard Channing</b> in 2002 (two supporting prizes). Rhys is the first to take home two <b>Lead</b> trophies in the same year &mdash; a real record, just a narrower one than the headline let on.</p>
+      <p>That double is a one-off, three names in forty-eight years. The pattern underneath it is not. Scroll down to browse who else has been nominated again and again &mdash; and who, unlike Rhys, never got the envelope at all.</p>
+    </div>
+    <aside class="doubles">
+      <h3>Every acting double-win, 1979&ndash;2026</h3>
+      <div class="dbl"><div class="yr">1991</div><div class="nm">James Earl Jones</div><div class="fm">Lead Actor, Drama &middot; <em>and</em> Supporting Actor, Limited/Movie</div></div>
+      <div class="dbl"><div class="yr">2002</div><div class="nm">Stockard Channing</div><div class="fm">Supporting Actress, Drama &middot; <em>and</em> Supporting Actress, Limited/Movie</div></div>
+      <div class="dbl hero-double"><div class="yr">2026</div><div class="nm">Matthew Rhys</div><div class="fm">Lead Actor, Comedy &middot; <em>and</em> Lead Actor, Limited/Movie &mdash; the only all-<b>Lead</b> double on record</div></div>
+    </aside>
+  </section>
+
+  <div class="tiles">
+    <div class="tile"><div class="v" id="statNeverWon">72.5%</div><div class="l">of everyone nominated for lead or supporting acting since 1979 <b>never won</b> that category, in any year they were up for it.</div></div>
+    <div class="tile"><div class="v" id="statFirstTry">68.1%</div><div class="l">of the ones who <b>did</b> eventually win, won on their <b>very first nomination</b> in the category.</div></div>
+    <div class="tile"><div class="v">12</div><div class="l"><b>Angela Lansbury&rsquo;s</b> streak of Lead Actress&ndash;Drama nominations for <i>Murder, She Wrote</i>, 1985&ndash;1996, with zero wins &mdash; nearly double anyone else&rsquo;s.</div></div>
+  </div>
+
+  <section class="section">
+    <h2>Nominate them twice, and the odds don&rsquo;t rise &mdash; they fall</h2>
+    <p class="sub">Among the 27% of careers that ever won their category, this is which nomination number it happened on. Almost seven in ten who ever win, win the first time they&rsquo;re up. Whatever happens after a loss, it isn&rsquo;t voters warming up to you.</p>
+    <div class="distwrap">
+      <div class="distbars" id="distBars"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>The longest losing streaks</h2>
+    <p class="sub">Ranked by nominations in a single category with zero wins, 1979&ndash;2026. Everyone here kept getting nominated &mdash; the voters clearly liked the work &mdash; and still never won it.</p>
+    <div class="drought" id="droughtList"></div>
+    <p class="champ-note"><b>Angela Lansbury</b> holds the record by a wide margin: twelve consecutive Lead Actress&ndash;Drama nominations for <i>Murder, She Wrote</i>, 1985 through 1996, and never once won. The runner-up mark is seven nominations, held jointly by ten other actors &mdash; among them Steve Carell, still active on the list after a seventh loss in 2026, and Larry David, nominated across three different decades for the same role.</p>
+  </section>
+
+  <section class="section">
+    <h2>Browse every nomination history</h2>
+    <p class="sub">Pick a category. Each row is one person&rsquo;s full nomination record in it, 1979 on the left to 2026 on the right &mdash; a gold circle is a win, a hollow one a loss. Click a row for the actual shows and years. Search finds anyone regardless of the filters.</p>
+
+    <div class="controls">
+      <div class="grp">
+        <div class="gl">Billing</div>
+        <div class="seg" id="segType"><button data-v="lead" class="on">Lead</button><button data-v="supporting">Supporting</button></div>
+      </div>
+      <div class="grp">
+        <div class="gl">Category</div>
+        <div class="seg" id="segGender"><button data-v="actor" class="on">Actor</button><button data-v="actress">Actress</button></div>
+      </div>
+      <div class="grp">
+        <div class="gl">Genre</div>
+        <div class="seg" id="segGenre"><button data-v="drama" class="on">Drama</button><button data-v="comedy">Comedy</button><button data-v="limited">Limited/Movie</button></div>
+      </div>
+      <div class="grp searchgrp">
+        <div class="gl">Search a name</div>
+        <input type="text" id="searchBox" placeholder="e.g. Lansbury">
+      </div>
+      <div class="grp">
+        <label class="chk"><input type="checkbox" id="minTwo" checked> 2+ nominations only</label>
+      </div>
+    </div>
+
+    <div class="famcount" id="famCount"></div>
+    <div class="axis"><div class="sp"></div><svg id="axisSvg" viewBox="0 0 480 20" preserveAspectRatio="none"></svg></div>
+    <div class="panel" id="peoplePanel"></div>
+  </section>
+
+  <section class="section">
+    <h2>How this was built, and where it breaks</h2>
+    <div class="methbox">
+      <h3>Twelve categories, one classifier</h3>
+      <p>The source CSV spells the same category more than a dozen ways per family across 76 years, and its own <code>canonical_category</code> column doesn&rsquo;t canonicalize any of it &mdash; 364 distinct strings survive there. Categories here were regrouped from the raw text by keyword (billing: lead/supporting; gender: actor/actress; genre: drama/comedy/limited &amp; miniseries &amp; movie &amp; special &amp; anthology), which is what makes the twelve families on this page comparable at all.</p>
+      <h3>Why the data starts in 1979, not 1949</h3>
+      <p>Running that classifier back to the Emmys&rsquo; start turns up years where a single category shows more than one declared winner &mdash; not real ties, but the mid-1970s Emmys&rsquo; own chaos of concurrent single-performance and continuing-performance schemes, one-off category names, and in 1959, entries like &ldquo;An Evening with Fred Astaire&rdquo; and men nominated for &ldquo;Supporting Actress.&rdquo; Every year from 1979 on was checked the same way and comes back clean, aside from a handful of genuine, documented ties (1995&rsquo;s Supporting Actress in a Miniseries or Special split between Judy Davis and Shirley Knight is real, not a bug). So the count starts at 1979, the year the modern six-category structure settles.</p>
+      <h3>People are matched by exact name</h3>
+      <p>A career is every nomination under one spelling of a name in one category family. A name change &mdash; marriage, billing &mdash; would split a career into two and understate a streak; none of the leaderboard names here are known to have one, but the dataset doesn&rsquo;t carry a person ID reliable enough to check automatically (only 10% of rows have one at all).</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="src">
+      <div><b>Source:</b> <a href="https://github.com/dmase2/emmys-data" target="_blank" rel="noopener">emmys-data</a>, a compiled Primetime Emmy nominations CSV covering 1949&ndash;2026 (8,549 rows). No licence file is published with it; the underlying facts &mdash; who was nominated, who won, in what year, for the Television Academy&rsquo;s own awards &mdash; are historical record of a public competition, not anyone&rsquo;s creative expression.</div>
+      <div style="margin-top:8px">Code on this page is MIT-licensed. Analysis, design and any errors are this project&rsquo;s own, not the Television Academy&rsquo;s or the CSV compiler&rsquo;s.</div>
+    </div>
+  </footer>
+
+</div>
+
+<script id="payload" type="application/json">{{PAYLOAD}}</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = JSON.parse(document.getElementById('payload').textContent);
+  var START = DATA.startYear, END = DATA.endYear;
+  var SPAN = END - START;
+
+  function xFor(year){ return ((year - START) / SPAN) * 460 + 10; }
+
+  // ---- distribution chart ----
+  (function(){
+    var host = document.getElementById('distBars');
+    var dist = DATA.stats.winDistribution;
+    var max = Math.max.apply(null, dist.map(function(d){ return d.count; }));
+    dist.forEach(function(d){
+      var pct = Math.max(3, Math.round((d.count / max) * 100));
+      var el = document.createElement('div');
+      el.className = 'distbar' + (d.nth === 1 ? ' first' : '');
+      var ord = d.nth===1?'1st':d.nth===2?'2nd':d.nth===3?'3rd':d.nth+'th';
+      el.innerHTML = '<div class="n">'+d.count+'</div><div class="bar" style="height:'+pct+'%"></div><div class="lbl">'+ord+'</div>';
+      host.appendChild(el);
+    });
+  })();
+
+  // ---- drought leaderboard ----
+  (function(){
+    var host = document.getElementById('droughtList');
+    var list = DATA.stats.longestDroughts.slice(0, 12);
+    list.forEach(function(d, i){
+      var row = document.createElement('div');
+      row.className = 'drow' + (i === 0 ? ' champ' : '');
+      row.innerHTML =
+        '<div class="rk">#'+(i+1)+'</div>'+
+        '<div class="who"><div class="n">'+d.name+'</div><div class="f">'+d.family+' &middot; '+d.years[0]+'&ndash;'+d.years[d.years.length-1]+'</div></div>'+
+        '<div class="ct">'+d.noms+' noms, 0 wins</div>';
+      host.appendChild(row);
+    });
+  })();
+
+  // ---- headline stat tiles (already static in HTML, but wire from data in case of regen) ----
+  document.getElementById('statNeverWon').textContent = DATA.stats.neverWonPct + '%';
+  document.getElementById('statFirstTry').textContent = DATA.stats.firstTryWinnersPct + '%';
+
+  // ---- axis ----
+  (function(){
+    var svg = document.getElementById('axisSvg');
+    var years = [1979, 1990, 2000, 2010, 2020, 2026];
+    var html = '';
+    years.forEach(function(y){
+      var x = xFor(y);
+      var anchor = x < 20 ? 'start' : x > 440 ? 'end' : 'middle';
+      html += '<text x="'+x+'" y="14" text-anchor="'+anchor+'">'+y+'</text>';
+    });
+    svg.innerHTML = html;
+  })();
+
+  // ---- family browser ----
+  var state = { type:'lead', gender:'actor', genre:'drama', minTwo:true, q:'' };
+
+  function familyKey(){ return state.type+'-'+state.gender+'-'+state.genre; }
+
+  function wireSeg(id, key){
+    var seg = document.getElementById(id);
+    seg.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if(!btn) return;
+      Array.prototype.forEach.call(seg.children, function(b){ b.classList.toggle('on', b===btn); });
+      state[key] = btn.dataset.v;
+      render();
+    });
+  }
+  wireSeg('segType','type');
+  wireSeg('segGender','gender');
+  wireSeg('segGenre','genre');
+
+  document.getElementById('minTwo').addEventListener('change', function(e){
+    state.minTwo = e.target.checked; render();
+  });
+  document.getElementById('searchBox').addEventListener('input', function(e){
+    state.q = e.target.value.trim().toLowerCase(); render();
+  });
+
+  function personRowSvg(person){
+    var s = '<svg viewBox="0 0 480 26" preserveAspectRatio="none">';
+    s += '<line x1="10" y1="13" x2="470" y2="13" stroke="var(--rule)" stroke-width="1"></line>';
+    person.noms.forEach(function(n){
+      var x = xFor(n.year);
+      var title = n.year + (n.work ? ' — ' + n.work : '') + (n.won ? ' (WON)' : '');
+      if(n.won){
+        s += '<circle class="dot-win" cx="'+x+'" cy="13" r="5.4"><title>'+esc(title)+'</title></circle>';
+      } else {
+        s += '<circle class="dot-loss" cx="'+x+'" cy="13" r="3.4"><title>'+esc(title)+'</title></circle>';
+      }
+    });
+    s += '</svg>';
+    return s;
+  }
+
+  function esc(str){
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function detailHtml(person){
+    return person.noms.map(function(n){
+      var lbl = n.won ? '<b>'+n.year+' — WON — '+esc(n.work)+'</b>' : n.year+' — '+esc(n.work);
+      return lbl;
+    }).join(' &nbsp;&middot;&nbsp; ');
+  }
+
+  var panel = document.getElementById('peoplePanel');
+  var famCountEl = document.getElementById('famCount');
+
+  function render(){
+    var fam = DATA.families[familyKey()];
+    if(!fam){ panel.innerHTML = '<div class="empty">No data for this combination.</div>'; famCountEl.textContent=''; return; }
+    var people = fam.people;
+    var q = state.q;
+    var shown = people.filter(function(p){
+      if(q) return p.name.toLowerCase().indexOf(q) !== -1;
+      return state.minTwo ? p.total >= 2 : true;
+    });
+
+    famCountEl.innerHTML = '<b>'+fam.label+'</b> &middot; showing '+shown.length+' of '+people.length+' people nominated, 1979–2026';
+
+    if(shown.length === 0){
+      panel.innerHTML = '<div class="empty">No one matches &ldquo;'+esc(state.q)+'&rdquo; in this category.</div>';
+      return;
+    }
+
+    var html = shown.map(function(p, idx){
+      var meta = p.total+' nom'+(p.total===1?'':'s')+', <b>'+p.wins+' win'+(p.wins===1?'':'s')+'</b>';
+      return '<div class="prow" data-idx="'+idx+'">'+
+        '<div class="who"><div class="n">'+esc(p.name)+'</div><div class="m">'+meta+'</div></div>'+
+        personRowSvg(p)+
+        '<div class="detail">'+detailHtml(p)+'</div>'+
+      '</div>';
+    }).join('');
+    panel.innerHTML = html;
+
+    Array.prototype.forEach.call(panel.querySelectorAll('.prow'), function(row, i){
+      row.addEventListener('click', function(ev){
+        if(ev.target.closest('a')) return;
+        row.classList.toggle('open');
+      });
+    });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
